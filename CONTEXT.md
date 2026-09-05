@@ -26,7 +26,7 @@
 - #96 "Setting user based flag conditions prevents migrations running on a fresh database" - open, unassigned, maintainer willbarton confirmed bug ("we should be handling model errors in the checks better than we are"), cristobalmackenzie proposed fix approach (catch ProgrammingError in validate_user), gudmundurp asked for status 2025-08-18 (no response). Real, verifiable bug.
 
 ## Gap ledger (dedupe — READ FIRST, never re-pick)
-- `2026-09-05` issue #96 — outcome: pr-opened — validate_user crashed with raw OperationalError/ProgrammingError when user table missing during migrate; fixed by catching DB errors and raising ValidationError; check now reports flags.E002 warning instead of crashing.
+- `2026-09-05` issue #96 — outcome: pr-opened (https://github.com/olitreadwell/django-flags/pull/1) — validate_user crashed with raw OperationalError/ProgrammingError when user table missing during migrate; fixed by catching DB errors and raising ValidationError; check now reports flags.E002 warning instead of crashing. Verified: 181 tests pass, ruff/bandit clean.
 
 ## Mined gaps (discovered, not yet attempted)
 - none
